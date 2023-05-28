@@ -23,7 +23,7 @@ else
 fi
 
 MY_KEYCHAIN="temp.keychain"
-MY_KEYCHAIN_PASSWORD="secret"
+MY_KEYCHAIN_PASSWORD="Sharegram"
 
 if [ ! -z "$(security list-keychains | grep "$MY_KEYCHAIN")" ]; then
 	security delete-keychain "$MY_KEYCHAIN" || true

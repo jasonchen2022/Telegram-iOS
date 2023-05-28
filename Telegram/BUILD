@@ -412,35 +412,18 @@ plist_fragment(
 )
 
 official_apple_pay_merchants = [
-    "merchant.ph.telegra.Telegraph",
-    "merchant.sberbank.ph.telegra.Telegraph",
-    "merchant.sberbank.test.ph.telegra.Telegraph",
-    "merchant.privatbank.test.telergramios",
-    "merchant.privatbank.prod.telergram",
-    "merchant.paymaster.test.telegramios",
-    "merchant.paymaster.prod.telegramios",
-    "merchant.smartglocal.prod.telegramios",
-    "merchant.smartglocal.test.telegramios",
-    "merchant.yoomoney.test.telegramios",
-    "merchant.yoomoney.prod.telegramios",
-    "merchant.org.telegram.Best2pay.test",
-    "merchant.psbank.test.telegramios",
-    "merchant.psbank.prod.telegramios",
-    "merchant.org.telegram.billinenet.test",
-    "merchant.org.telegram.billinenet.prod",
-    "merchant.org.telegram.portmone.test",
+   "merchant.sberbank.test.org.telegram.sharagram"
 ]
 
 official_bundle_ids = [
-    "ph.telegra.Telegraph",
-    "org.telegram.Telegram-iOS",
+    "org.telegram.sharagram"
 ]
 
 store_bundle_ids = [
-    "ph.telegra.Telegraph",
+    "org.telegram.sharagram",
 ]
 
-apple_pay_merchants = official_apple_pay_merchants if telegram_bundle_id == "ph.telegra.Telegraph" else []
+apple_pay_merchants = official_apple_pay_merchants if telegram_bundle_id == "org.telegram.sharagram" else []
 
 apple_pay_merchants_fragment = "" if apple_pay_merchants == [] else """
 <key>com.apple.developer.in-app-payments</key>
