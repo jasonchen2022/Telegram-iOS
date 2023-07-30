@@ -468,7 +468,7 @@ private func formSupportApplePay(_ paymentForm: BotPaymentForm) -> Bool {
     
     var merchantId: String?
     if nativeProvider.name == "stripe" {
-        merchantId = "merchant.org.telegram.sharagram"
+        merchantId = "merchant.org.telegram.sharegram"
     } else if let paramsId = nativeParams["apple_pay_merchant_id"] as? String {
         merchantId = paramsId
     }
@@ -1367,7 +1367,7 @@ final class BotCheckoutControllerNode: ItemListControllerNode, PKPaymentAuthoriz
                     let merchantId: String
                     var countryCode: String = "US"
                     if nativeProvider.name == "stripe" {
-                        merchantId = "merchant.org.telegram.sharagram"
+                        merchantId = "merchant.org.telegram.sharegram"
                     } else if let paramsId = nativeParams["apple_pay_merchant_id"] as? String {
                         merchantId = paramsId
                     } else {
@@ -1635,7 +1635,7 @@ final class BotCheckoutControllerNode: ItemListControllerNode, PKPaymentAuthoriz
                 let configuration = STPPaymentConfiguration.shared().copy() as! STPPaymentConfiguration
                 configuration.smsAutofillDisabled = true
                 configuration.publishableKey = publishableKey
-                configuration.appleMerchantIdentifier = "merchant.org.telegram.sharagram"
+                configuration.appleMerchantIdentifier = "merchant.org.telegram.sharegram"
                 
                 let apiClient = STPAPIClient(configuration: configuration)
                 

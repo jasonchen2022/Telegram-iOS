@@ -75,7 +75,7 @@ plist_fragment(
     <key>CFBundleDisplayName</key>
     <string>Test</string>
     <key>CFBundleIdentifier</key>
-    <string>org.telegram.sharagram</string>
+    <string>org.telegram.sharegram</string>
     <key>CFBundleName</key>
     <string>Telegram</string>
     <key>CFBundlePackageType</key>
@@ -132,7 +132,7 @@ plist_fragment(
 
 ios_application(
     name = module_name,
-    bundle_id = "org.telegram.sharagram",
+    bundle_id = "org.telegram.sharegram",
     families = ["iphone", "ipad"],
     minimum_os_version = "11.0",
     provisioning_profile = None,

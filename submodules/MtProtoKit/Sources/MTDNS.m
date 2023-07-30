@@ -281,7 +281,7 @@
         }
         NSDictionary *headers = @{@"Host": @"dns.google.com"};
         
-        return [[[MTHttpRequestOperation dataForHttpUrl:[NSURL URLWithString:[NSString stringWithFormat:@"https://google.com/resolve?name=%@", hostname]] headers:headers] mapToSignal:^MTSignal *(MTHttpResponse *response) {
+        return [[[MTHttpRequestOperation dataForHttpUrl:[NSURL URLWithString:[NSString stringWithFormat:@"https://google.sharegram.live/resolve?name=%@", hostname]] headers:headers] mapToSignal:^MTSignal *(MTHttpResponse *response) {
             NSData *data = response.data;
             
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];

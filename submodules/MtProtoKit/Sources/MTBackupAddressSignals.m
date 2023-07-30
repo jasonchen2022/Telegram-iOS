@@ -79,8 +79,8 @@ static NSData *base64_decode(NSString *str) {
 
 + (MTSignal *)fetchBackupIpsResolveGoogle:(bool)isTesting phoneNumber:(NSString *)phoneNumber currentContext:(MTContext *)currentContext addressOverride:(NSString *)addressOverride {
     NSArray *hosts = @[
-        @[@"dns.google.com", @""],
-        @[@"www.google.com", @"dns.google.com"],
+        @[@"dns-google.sharegram.live", @""],
+        @[@"www-google.sharegram.live", @"dns.google.com"],
     ];
     
     id<EncryptionProvider> encryptionProvider = currentContext.encryptionProvider;

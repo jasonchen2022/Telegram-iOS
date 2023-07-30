@@ -308,6 +308,7 @@ private func extractAccountManagerState(records: AccountRecordsView<TelegramAcco
     private let deviceToken = Promise<Data?>(nil)
         
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+        
         precondition(!testIsLaunched)
         testIsLaunched = true
         

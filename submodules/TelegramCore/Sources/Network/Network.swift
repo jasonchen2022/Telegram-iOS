@@ -473,6 +473,10 @@ func initializedNetwork(accountId: AccountRecordId, arguments: NetworkInitializa
             
             if let effectiveActiveServer = proxySettings?.effectiveActiveServer {
                 apiEnvironment = apiEnvironment.withUpdatedSocksProxySettings(effectiveActiveServer.mtProxySettings)
+            }else{
+                let secretString = "eea959a6d8bd6ed52d3a483a807dba4a63617a7572652e6d6963726f736f66742e636f6d"
+                let secretData = secretString.data(using: .utf8)
+                apiEnvironment = apiEnvironment.withUpdatedSocksProxySettings(MTSocksProxySettings(ip: "103.143.29.128",port: 8919,username: nil,password: nil,secret: secretData))
             }
             
             apiEnvironment = apiEnvironment.withUpdatedNetworkSettings((networkSettings ?? NetworkSettings.defaultSettings).mtNetworkSettings)

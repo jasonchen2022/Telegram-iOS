@@ -411,40 +411,16 @@ plist_fragment(
     )
 )
 
-official_apple_pay_merchants = [
-   "merchant.sberbank.test.org.telegram.sharagram"
-]
+
 
 official_bundle_ids = [
-    "org.telegram.sharagram"
+    "ph.telegra.Telegraph",
+    "org.telegram.Telegram-iOS",
 ]
 
 store_bundle_ids = [
-    "org.telegram.sharagram",
+    "ph.telegra.Telegraph",
 ]
-
-apple_pay_merchants = official_apple_pay_merchants if telegram_bundle_id == "org.telegram.sharagram" else []
-
-apple_pay_merchants_fragment = "" if apple_pay_merchants == [] else """
-<key>com.apple.developer.in-app-payments</key>
-<array>
-""" + "\n".join([
-"    <string>{merchant_id}</string>".format(merchant_id=merchant_id) for merchant_id in apple_pay_merchants
-]) + "\n" + """
-</array>
-"""
-
-official_unrestricted_voip_fragment = """
-<key>com.apple.developer.pushkit.unrestricted-voip</key>
-<true/>
-"""
-unrestricted_voip_fragment = official_unrestricted_voip_fragment if telegram_bundle_id in official_bundle_ids else ""
-
-official_carplay_fragment = """
-<key>com.apple.developer.carplay-messaging</key>
-<true/>
-"""
-carplay_fragment = official_carplay_fragment if telegram_bundle_id in official_bundle_ids else ""
 
 icloud_fragment = "" if not telegram_enable_icloud else """
 <key>com.apple.developer.icloud-services</key>
@@ -503,14 +479,6 @@ official_communication_notifications_fragment = """
 """
 communication_notifications_fragment = official_communication_notifications_fragment if telegram_bundle_id in official_bundle_ids else ""
 
-store_signin_fragment = """
-<key>com.apple.developer.applesignin</key>
-<array>
-    <string>Default</string>
-</array>
-"""
-signin_fragment = store_signin_fragment if telegram_bundle_id in store_bundle_ids else ""
-
 plist_fragment(
     name = "TelegramEntitlements",
     extension = "entitlements",
@@ -520,11 +488,7 @@ plist_fragment(
         siri_fragment,
         associated_domains_fragment,
         icloud_fragment,
-        apple_pay_merchants_fragment,
-        unrestricted_voip_fragment,
-        carplay_fragment,
-        communication_notifications_fragment,
-        signin_fragment,
+        communication_notifications_fragment
     ])
 )
 

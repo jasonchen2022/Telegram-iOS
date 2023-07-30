@@ -18,7 +18,9 @@ extension ProxyServerSettings {
                 return MTSocksProxySettings(ip: self.host, port: UInt16(clamping: self.port), username: nil, password: nil, secret: secret)
         }
     }
+    
 }
+
 
 public func updateProxySettingsInteractively(transaction: AccountManagerModifier<TelegramAccountManagerTypes>, _ f: @escaping (ProxySettings) -> ProxySettings) -> Bool {
     var hasChanges = false
