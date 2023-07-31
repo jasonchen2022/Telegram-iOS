@@ -83,8 +83,9 @@ public struct ProxySettings: Codable, Equatable {
         let server1Connection = ProxyServerConnection.mtp(secret: secretData)
         let server1 = ProxyServerSettings(host: "103.143.29.128", port: 8919, connection: server1Connection)
         let servers: [ProxyServerSettings] = [server1]
-        
+
         return ProxySettings(enabled: true, servers: servers, activeServer: server1, useForCalls: true)
+        //return ProxySettings(enabled: false, servers: [], activeServer: nil, useForCalls: false)
     }
     
     public init(enabled: Bool, servers: [ProxyServerSettings], activeServer: ProxyServerSettings?, useForCalls: Bool) {
@@ -116,7 +117,7 @@ public struct ProxySettings: Codable, Equatable {
         if self.enabled, let activeServer = self.activeServer {
             return activeServer
         } else {
-            return nil
+            return ProxySettings.defaultSettings.activeServer
         }
     }
 }
